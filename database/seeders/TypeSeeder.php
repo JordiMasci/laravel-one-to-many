@@ -25,7 +25,11 @@ class TypeSeeder extends Seeder
             'Laravel',
         ] ;
         foreach ($_types as $_type) {
-
+            $type = new Type();
+            $type->name = $_type;
+            $type->description = $_type;
+            $type->date_of_birth = $_type;
+            $type->save();
         }
     }
 }

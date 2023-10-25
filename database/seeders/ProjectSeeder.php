@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
+use App\Models\Type;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -18,6 +20,8 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        $types = Type::all();
+
         for ($i = 0; $i < 100; $i++) {
             $post = new Project();
             $post->title = $faker->catchPhrase();
