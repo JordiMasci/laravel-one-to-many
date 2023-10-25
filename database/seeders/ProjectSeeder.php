@@ -20,10 +20,12 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $types = Type::all();
+        $types_id = Type::all()->pluck('id');
+        
 
         for ($i = 0; $i < 100; $i++) {
             $post = new Project();
+            $post->type_id= ;
             $post->title = $faker->catchPhrase();
             $post->content = $faker->paragraph(3, true);
             $post->slug = Str::slug($post->title);
