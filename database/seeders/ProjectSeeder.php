@@ -25,7 +25,7 @@ class ProjectSeeder extends Seeder
 
         for ($i = 0; $i < 100; $i++) {
             $post = new Project();
-            $post->type_id= ;
+            $post->type_id= $faker->randomElement($types_id);
             $post->title = $faker->catchPhrase();
             $post->content = $faker->paragraph(3, true);
             $post->slug = Str::slug($post->title);
