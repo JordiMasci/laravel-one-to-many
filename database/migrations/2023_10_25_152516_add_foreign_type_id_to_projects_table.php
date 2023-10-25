@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use PhpParser\Node\NullableType;
 
 return new class extends Migration
 {
@@ -14,7 +15,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->foreignId('type_id')->after('id')->constrained();
+            $table->foreignId('type_id')->after('id')->nullable()->constrained();
         });
     }
 
@@ -26,7 +27,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->dropColumn('projects_type_id_foreign');
+            $table->dropForeign('projects_type_id_foreign');
             $table->dropColumn('type_id');
         });
     }
