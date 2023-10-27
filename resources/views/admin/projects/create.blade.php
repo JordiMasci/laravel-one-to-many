@@ -35,7 +35,8 @@
                 <select name="type_id" id="type_id" class="@error('type_id') is-invalid @enderror">
                     <option value="100000">Non categorizzato</option>
                     @foreach ($types as $type)
-                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        <option value="{{ $type->id }}" @if (old('type_id') == $type->id) selected @endif>
+                            {{ $type->name }}</option>
                     @endforeach
                 </select>
             </div>
