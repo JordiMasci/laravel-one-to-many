@@ -16,7 +16,7 @@
             <div class="col-3">
                 <p>
                     <strong>Tipo</strong><br>
-                    {{ $project->type->name}}
+                    {{ $project->type?->name}}
                 </p>
             </div>
             <div class="col-3">
