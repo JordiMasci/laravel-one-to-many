@@ -15,6 +15,12 @@
         <div class="row g-5 mt-3">
             <div class="col-3">
                 <p>
+                    <strong>Tipo</strong><br>
+                    {{ $project->type->name}}
+                </p>
+            </div>
+            <div class="col-3">
+                <p>
                     <strong>Slug</strong><br>
                     {{ $project->slug }}
                 </p>
