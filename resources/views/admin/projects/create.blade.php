@@ -32,8 +32,8 @@
 
             <div class="col-12 my-4">
                 <label for="type_id" class="form-label ">Tipo</label>
-                <select name="type_id" id="type_id">
-                    <option value="">non categorizzato</option>
+                <select name="type_id" id="type_id" class="@error('type_id') is-invalid @enderror">
+                    <option value="100000">Non categorizzato</option>
                     @foreach ($types as $type)
                         <option value="{{ $type->id }}">{{ $type->name }}</option>
                     @endforeach

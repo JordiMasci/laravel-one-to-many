@@ -69,7 +69,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -84,6 +85,7 @@ class ProjectController extends Controller
        $project->title = $data['title'];
        $project->content = $data['content'];
        $project->slug = Str::slug($project->title);
+       $project->type_id = $data['type_id'];
        $project->save();
        return redirect()->route('admin.projects.show', compact('project'));
     }

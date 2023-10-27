@@ -15,12 +15,17 @@
 
             <div class="col-12 my-4">
                 <label for="title" class="form-label">Titolo</label>
-                <input type="text" name="title" id="title" class="form-control" value="{{$project->title}}">
+                <input type="text" name="title" id="title" class="form-control" value="{{ $project->title }}">
+            </div>
+
+            <div class="col-12 my-4">
+                <label for="type_id" class="form-label">Tipo</label>
+                <select name="type_id" id="type_id"></select>
             </div>
 
             <div class="col-12 mb-4">
                 <label for="content" class="form-label">Contenuto</label>
-                <textarea name="content" id="content" class="form-control" rows="5">{{$project->content}}</textarea>
+                <textarea name="content" id="content" class="form-control" rows="5">{{ $project->content }}</textarea>
             </div>
 
             <div class="col-12 mb-4">

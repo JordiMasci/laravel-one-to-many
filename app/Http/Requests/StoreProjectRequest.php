@@ -35,6 +35,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title.required' => 'Il titolo è obbligatorio',
             'content.required' => 'Il contenuto è obbligatorio',
+            'type_id.required' => 'La tipologia è obbligatoria',
         ] ;
     }
 }
