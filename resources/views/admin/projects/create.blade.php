@@ -25,7 +25,19 @@
 
             <div class="col-12 my-4">
                 <label for="title" class="form-label ">Titolo</label>
-                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror">
+                <input type="text" name="title" id="title"
+                    class="form-control @error('title') is-invalid @enderror">
+            </div>
+
+
+            <div class="col-12 my-4">
+                <label for="type_id" class="form-label ">Tipo</label>
+                <select name="type_id" id="type_id">
+                    <option value="">non categorizzato</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="col-12 mb-4">
